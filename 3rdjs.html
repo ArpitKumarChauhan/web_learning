@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country & Capital Quiz</title>
+    <style>
+        #main
+        {
+            border:4px solid aqua;
+            height:auto;
+            width:600px;
+            margin:20px auto;
+            padding:20px;
+            text-align: center;
+            background: rgb(226, 234, 211);
+        }
+        button{
+            background: rgb(122, 151, 241);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>Match the Country with its Capital</h2>
+
+        <label for="country">Country:</label>
+        <select id="country">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+            <option value="USA">USA</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="China">China</option>
+        </select>
+        <br><br>
+        <label for="capital">Capital:</label>
+        <select id="capital">
+            <option value="">Select Capital</option>
+            <option value="Washington D.C">Washington, D.C.</option>
+            <option value="Delhi">New Delhi</option>
+            <option value="Paris">Paris</option>
+            <option value="Bejing">Bejing</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Islamabad">Islamabad</option>
+        </select>
+        <br><br>
+        <button onclick="checkAnswer()">Check Answer</button>
+        <h4 id="result"></h4>
+        <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1 </p>
+    </div>
+    <script>
+        function checkAnswer()
+        {
+            let country = document.getElementById('country').value;
+            let capital = document.getElementById('capital').value;
+            let result = document.getElementById('result');
+            const check = {
+                "USA":"Washington D.C",
+                "India":"Delhi",
+                "France":"Paris",
+                "China":"Bejing",
+                "Japan":"Tokyo",
+                "Pakistan":"Islamabad",
+                "Germany":"Berlin"
+            }; 
+            if(!capital || !country)
+            {
+                result.innerHTML="Enter both Country and capital";
+                result.style.color='red';
+                document.getElementById('capital').style.border='2px solid red';
+                document.getElementById('country').style.border='2px solid red';
+            }
+            else if(check[country]==capital)
+            {
+                result.innerHTML="Correct Answer";
+                result.style.color='green';
+                document.getElementById('capital').style.border='2px solid green';
+                document.getElementById('country').style.border='2px solid green';
+            }
+            else
+            {
+                result.innerHTML="Wrong Answer The capital of "+country+" is "+check[country]+".";
+                result.style.color='red';
+                capital.style.border='2px solid red';
+            }
+        }
+        </script>
+</body>
+</html>

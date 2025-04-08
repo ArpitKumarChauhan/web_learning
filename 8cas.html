@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Properties</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+        .main {
+            width: 100%;
+            height: 80vh;
+            border: 4px solid aqua;
+            text-align: center;
+            padding:20px;
+        }
+        .static {
+            position: static;
+            background:gray;
+        }
+        .relative {
+            position: relative;
+            top: 30px;
+            left: 50px;
+            background-color: lightgreen;
+        }
+        .absolute {
+            position: absolute;
+            top: 100px;
+            right: 20%;
+            background-color: rgb(173, 216, 230,0.5);
+        }
+        .fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: lightgoldenrodyellow;
+        }
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: rgb(255, 182, 193,0.5);
+            padding: 10px;
+            margin:20px
+        }
+        .box{
+            height:10%;
+            width:15%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Position Property Demonstration</h1>
+
+        <div class="box static">Static Position</div>
+        <div class="box relative">Relative Position</div>
+        <div class="box absolute">Absolute Position</div>
+        <div class="box fixed">Fixed Position</div>
+        <div class="box sticky">Sticky Position</div>
+        <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1 </p>
+    </div>
+</body>
+</html>

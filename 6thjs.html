@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number</title>
+    <style>
+        #main
+        {
+            border:3px solid rgb(0, 187, 255);
+            height:auto;
+            width:600px;
+            padding:20px;
+            margin:20px auto;
+            text-align: center;
+            background: rgb(226, 234, 211);
+        }
+        button{
+            background: rgb(122, 151, 241);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">    
+        <label for="num">Enter Phone Number : </label>
+        <input type="number" id="num" name=""num>
+        <br><br>
+        <button type="button" onclick="validate()">Validate</button>
+        <br><br>
+        <label for="cc">Country Code : </label>
+        <input type="text" id="cc" name="cc">
+        <label for="pn">Phone Number : </label>
+        <input type="text" id="pn" name="pn">
+        <br><br>
+        <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1</p>
+    </div>
+    <script>
+        function validate()
+        {
+            let ans=document.getElementById('num').value;
+            let cc = ans.substring(0,3);
+            let pn = ans.substring(3,10);
+            document.getElementById('cc').value=cc;
+            document.getElementById('pn').value=pn;
+        }
+    </script>
+</body>
+</html>

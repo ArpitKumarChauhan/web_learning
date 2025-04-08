@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Modifying Web Page</title>
+    <style>
+        #main
+        {
+            border:4px solid aqua;
+            height:auto;
+            width:600px;
+            margin:20px auto;
+            padding:20px;
+            text-align: center;
+            background: rgb(226, 234, 211);
+        }
+        h2{
+            color:rgb(215, 109, 148);
+        }
+        .p1{
+            color:blue;
+            margin:15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>This Web Page is Update in every 5 seconds.</h2>
+        <p id="content" class="p1">This page will change every minute.</p>
+        <p class="p1">Last updated: <span id="timestamp"></span></p> 
+        <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1 </p>   
+    </div>
+    <script>
+        function modifyPage() {
+            const messages = [
+                "Hello, I am Arpit Kumar Chauhan!",
+                "Did you know? This page updates every minute.",
+                "Enjoy watching the content change automatically!",
+                "Stay tuned for more updates!",
+                "I am Studying in Graphic Era Hill University."
+            ];
+            document.getElementById("content").innerHTML = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("timestamp").innerHTML = new Date().toLocaleTimeString();
+        }
+        setInterval(modifyPage, 5000);
+        modifyPage();
+    </script>
+
+</body>
+</html>

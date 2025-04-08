@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Birth Day</title>
+    <style>
+        #main
+        {
+            margin-top:30px;
+            border:4px solid aqua;
+            height:auto;
+            width:600px;
+            margin:200px auto;
+            padding:20px;
+            text-align: center;
+            background: rgb(226, 234, 211);
+        }
+        h2{
+            color:rgb(215, 109, 148);
+        }
+        button{
+            color:blue;
+            margin:15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    <h2>Find the Day You Were Born</h2>
+    <label for="birthdate">Enter your birthdate:</label>
+    <input type="date" id="birthdate">
+    <br>
+    <button onclick="findDay()">Find Day</button><br>
+    <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1 </p>
+    </div>
+    <script>
+        function findDay() {
+            let birthdate = document.getElementById('birthdate').value;
+            if(!birthdate)
+            {
+                alert("Enter date of Birth First!");
+            }
+            let day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let date = new Date(birthdate);
+            alert("You were born on a " +day[date.getDay()]);
+        }
+    </script>
+</body>
+</html>

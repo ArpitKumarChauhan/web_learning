@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check String</title>
+</head>
+<body>
+    <h2>Check if Input is a String</h2>
+    <input type="text" id="input" placeholder="Enter something">
+    <button onclick="checkInput()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function isString(value) {
+            return /^[a-zA-Z\s]+$/.test(value);
+        }
+        function checkInput() {
+            let input = document.getElementById("input").value;
+            let result = isString(input);
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

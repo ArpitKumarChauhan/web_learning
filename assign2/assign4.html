@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truncate String</title>
+</head>
+<body>
+    <h2>Truncate String</h2>
+    <input type="text" id="input" placeholder="Enter text"><br><br>
+    <input type="number" id="num" placeholder="Enter length"><br><br>
+    <button onclick="truncateString()">Truncate</button>
+    <p id="result"></p>
+
+    <script>
+        function truncateString() {
+            let input = document.getElementById("input").value;
+            let num = parseInt(document.getElementById("num").value);
+            document.getElementById("result").innerText = input.substring(0, num);
+        }
+    </script>
+</body>
+</html>
