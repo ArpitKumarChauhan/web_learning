@@ -1,0 +1,142 @@
+/* Apply styles to the full body */
+body
+{
+    background : linear-gradient(to right, #E3EAF3, #E3EAF3);
+    font-family : 'Poppins', sans-serif;
+    color : rgb(59,79,99) !important;
+    scroll-behavior: smooth;
+}
+/* Table styling */
+.tb
+{
+    padding:10%;
+    text-align:center;
+}
+/* Content centering */
+.con
+{
+    text-align: center;
+}
+/* Description text alignment */
+.desc
+{
+    text-align: justify !important;
+}
+/* Header section styling */
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(to right, #C8D7E5, #d1d8e0);
+}
+/* Typing animation for heading */
+.intro h1
+{
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: rgb(59,79,99);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2.5s steps(20, end) forwards;
+}
+@keyframes typing
+{
+    from {width  : 0%;}
+    to {width : 100%;}
+}
+.intro p
+{
+    font-size:1.5rem;
+}
+/* Section styling */
+.section
+{
+    padding:100px 0;
+    text-align: center;
+}
+/* Main content box */
+.content
+{
+    width: 60%;
+    margin: auto;
+    background: #E8EEF3;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1.5s ease-in-out;
+    align-items: center;
+}
+/* Footer styling */
+.foot
+{
+    background: rgb(59,79,99);
+    color:#ffffff;
+    text-align: center;
+    padding:15px;
+}
+/* Button styling */
+.bt{
+    background: #F9A826 !important;
+    color: rgb(59,79,99);
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+.bt:hover
+{
+    background: rgb(59,79,99) !important;
+    color: #FFFFFF;
+    transform: scale(1.1);
+}
+.bt:active {
+    transform: scale(0.95);
+}
+/* Navbar styling */
+.navbar {
+    background: rgb(59,79,99);
+    padding: 20px;
+    position: fixed !important;
+    width: 100%;
+}
+.navbar-brand, .nav-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+.nav-link:hover {
+    color: #F9A826 !important;
+    transform: scale(1.1);
+}
+.nav-link:active {
+    transform: scale(0.95);
+}
+/* Table styling */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table th{
+    background:rgb(59,79,99);
+    color:#ffffff;
+    text-align: center;
+    padding: 6px 10px;
+    border:1px solid rgb(59,79,99);
+}
+table td{
+    border:1px solid rgb(59,79,99);
+    text-align: center;
+    padding: 10px;
+}
+/* Image styling */
+.im{
+    width:170px;
+    height:150px;
+}

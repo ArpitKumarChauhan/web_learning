@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .rectangle{
+      width:200px;
+      height:100px;
+      background:red;
+    }
+    .circle{
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      background: green;
+      
+    }
+  </style>
+</head>
+<body>
+  <div id="rect" class="rectangle"></div>
+  <button onclick="fun()">Click</button>
+  <script>
+    function fun()
+    {
+      let shape = document.getElementById('rect');
+      shape.classList.toggle('rectangle');
+      shape.classList.toggle('circle');
+      alert("Shape Changed");
+    }
+  </script>
+</body>
+</html>
