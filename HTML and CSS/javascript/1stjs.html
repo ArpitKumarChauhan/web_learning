@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        #main
+        {
+            border:3px solid rgb(0, 187, 255);
+            height:auto;
+            width:600px;
+            padding:20px;
+            margin:20px auto;
+            text-align: center;
+            background: rgb(226, 234, 211);
+        }
+        button{
+            background: rgb(122, 151, 241);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">    
+        Enter card Number
+        <input type="number" id="in">
+        <br><br>
+        <button type="button" onclick="validate()">Validate</button>
+        <br><br>
+        <div id="out"></div>
+        <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1 </p>
+    </div>
+    <script>
+        function validate()
+        {
+            var c = document.getElementById('in').value;
+            if((/^[51-55]/.test(c)) && (c.length==16))
+            {
+                document.getElementById('out').innerHTML='Valid MasterCard Number';
+                document.getElementById('out').style.color='green';
+            }
+            else if((/^4/.test(c)) && ((c.length==13) || (c.length==16)))
+            {
+                document.getElementById('out').innerHTML='Valid Visa Card Number';
+                document.getElementById('out').style.color='green';
+            }
+            else if((/^[34,37]/.test(c)) && (c.length==15))
+            {
+                document.getElementById('out').innerHTML='Valid American Express Card Number';
+                document.getElementById('out').style.color='green';
+            }
+            else
+            {
+                document.getElementById('out').innerHTML='!Invalid Card Number';
+                document.getElementById('out').style.color='red';
+            }
+        }
+    </script>
+</body>
+</html>

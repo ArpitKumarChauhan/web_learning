@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Case Converter</title>
+    <style>
+        #main
+        {
+            border:3px solid rgb(0, 187, 255);
+            height:auto;
+            width:600px;
+            padding:20px;
+            margin:20px auto;
+            text-align: center;
+            background: rgb(226, 234, 211);
+        }
+        button{
+            color: blue;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>Swap Case Converter</h2>
+        <input type="text" id="textInput" placeholder="Enter text here">
+        <button onclick="swapCase()">Swap Case</button>
+        <p><strong>Converted Text:</strong> <span id="output"></span></p>   
+        <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1</p> 
+    </div>
+    <script>
+        function swapCase() {
+            let inputText = document.getElementById("textInput").value;
+            let swappedText = inputText.split('').map(char =>
+                char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()
+            ).join('');
+            document.getElementById("output").innerHTML = swappedText;
+            document.getElementById("output").style.color="green";
+        }
+    </script>
+
+</body>
+</html>

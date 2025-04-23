@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number</title>
+    <style>
+        #main
+        {
+            border:3px solid rgb(0, 187, 255);
+            height:auto;
+            width:600px;
+            padding:20px;
+            margin:20px auto;
+            text-align: center;
+            background: rgb(226, 234, 211);
+        }
+        button{
+            color: blue;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">    
+        <label for="str">Enter String: </label>
+        <input type="text" id="str">
+        <br>
+        <button onclick="find()">Find Vowel</button>
+        <br>
+        <p id="vow"></p>
+        <label for="num">Enter String: </label>
+        <input type="number" id="num">
+        <br>
+        <button onclick="rev()">Reverse Number</button>
+        <p id="revans"></p>
+        <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1</p>
+    </div>
+    <script>
+        function find()
+        {
+            let word = document.getElementById('str').value;
+            let vowel = "aAeEiIoOuU";
+            for(let i=0;i<word.length;i++)
+            {
+                if(vowel.includes(word[i]))
+                {
+                    document.getElementById('vow').innerHTML="Left Most Vowel at the Position : "+(i+1);
+                    document.getElementById('vow').style.color='green';
+                    return;
+                }
+            }
+            document.getElementById('vow').innerHTML="No Vowel Found!";
+        }
+        function rev()
+        {
+            let num = document.getElementById('num').value;
+            let rev = num.split("").reverse().join("");
+            document.getElementById("revans").innerText = "Reversed: " + rev;
+            document.getElementById('revans').style.color='green';
+        }
+    </script>
+</body>
+</html>

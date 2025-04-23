@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate</title>
+    <style>
+        #main
+        {
+            border:3px solid rgb(0, 187, 255);
+            height:auto;
+            width:600px;
+            padding:20px;
+            margin:20px auto;
+            text-align: center;
+            background: rgb(226, 234, 211);
+        }
+        button{
+            background: rgb(122, 151, 241);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <label for="name">Name : </label>
+        <input id="name" name="name" type="text">
+        <br><br>
+        <label for="mail">E-Mail : </label>
+        <input id="mail" name="mail" type="text">
+        <br><br>
+        <label for="pass">Password : </label>
+        <input id="pass" name="pass" type="text">
+        <br><br>
+        <button type="button" onclick="validate()">Validate</button><br><br>
+        <div id="vn"></div>
+        <div id="ve"></div>
+        <div id="vp"></div>
+        <p>Name: Arpit Kumar Chauhan Studentid: 230115096 Semester: 6<sup>th</sup> Section: K1 </p>
+    </div>
+    <script>
+        function validate()
+        {
+            let user = document.getElementById('name').value;
+            let mail = document.getElementById('mail').value;
+            let pass = document.getElementById('pass').value;
+            /*For name validation*/
+            if(/^[a-zA-Z]+$/.test(user))
+            {
+                document.getElementById('vn').innerHTML='Valid Name';
+                document.getElementById('vn').style.color='green';
+                document.getElementById('name').style.border='2px solid green';
+            }
+            else
+            {
+                document.getElementById('vn').innerHTML='InValid Name'; 
+                document.getElementById('vn').style.color='red';
+                document.getElementById('name').style.border='2px solid red';
+            }
+            /*for Email validation*/
+            if(/^[a-z]+[0-9_a-z]*@[a-z]+\.[a-z]{2,}$/.test(mail))
+            {
+                document.getElementById('ve').innerHTML='Valid E-mail';
+                document.getElementById('ve').style.color='green';
+                document.getElementById('mail').style.border='2px solid green';
+            }
+            else
+            {
+                document.getElementById('ve').innerHTML='InValid E-mail'; 
+                document.getElementById('ve').style.color='red';
+                document.getElementById('mail').style.border='2px solid red';
+            }
+            /*For Password validation*/            
+            if(/[a-zA-Z0-9@#][0-9]*[a-zA-Z@#0-9]+$/.test(pass) && (pass.length>=8))
+            {
+                document.getElementById('vp').innerHTML='Valid PassWord';
+                document.getElementById('vp').style.color='green';
+                document.getElementById('pass').style.border='2px solid green';
+            }
+            else
+            {
+                document.getElementById('vp').innerHTML='InValid PassWord'; 
+                document.getElementById('vp').style.color='red';
+                document.getElementById('pass').style.border='2px solid red';
+            }
+        }
+    </script>
+</body>
+</html>

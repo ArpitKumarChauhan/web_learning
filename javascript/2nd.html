@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Fetch</title>
+</head>
+<body>
+  <div id="videos-container"></div>
+
+  <script>
+    const API_KEY =  'AIzaSyBLp5oK9IA_lJVTIbFhvV60xq88fWDEHNw';
+    const CHANNEL_ID = 'UCLf8B_IY4g6zy3oWjdZsP7Q';
+    const MAX_RESULTS = 3;
+    const videosContainer = document.getElementById('videos-container');
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResults=${MAX_RESULTS}&order=date&type=video&key=${API_KEY}`)
+      .then(response => response.json())
+      .then(data => {
+        const videos = data.items;
+        videos.forEach(video => {
+          const videoTitle = video.snippet.title;
+          const videoId = video.id.videoId;
+          const videoThumbnail = video.snippet.thumbnails.high.url;
+          const videoDescription = video.snippet.description;
+          const videoElement = document.createElement('div');
+          videoElement.innerHTML = `
+            <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+            <h4>${videoTitle}</h4>
+            <p>${videoDescription}</p>`
+          ;
+          videosContainer.appendChild(videoElement);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching videos:', error);
+      });
+  </script>
+</body>
+</html>
